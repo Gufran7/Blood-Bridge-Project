@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-ink-100 antialiased;
+    line-height: 1.5;
+  }
+
+  ::selection {
+    background: rgb(224 49 63 / 0.35);
+  }
+}
+
+@layer components {
+  .hero-glow {
+    background:
+      radial-gradient(ellipse 60% 50% at 75% 10%, rgb(224 49 63 / 0.22), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 15% 90%, rgb(196 32 46 / 0.12), transparent 70%);
+  }
+
+  .glass {
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] shadow-[0_12px_48px_rgba(0,0,0,0.45)] backdrop-blur-xl;
+  }
+
+  .section-title {
+    @apply text-3xl font-extrabold leading-[1.2] tracking-tight text-ink-100 sm:text-4xl;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-ruby-400;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-ruby-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_0_24px_rgba(224,49,63,0.35)] transition duration-300 hover:bg-ruby-400 hover:shadow-[0_0_34px_rgba(224,49,63,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ruby-300 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-5 py-3 text-sm font-semibold text-ink-100 transition duration-300 hover:border-white/30 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-steel-300 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950 active:scale-[0.98];
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-white/10 bg-ink-900/80 px-4 py-3 text-sm text-ink-100 placeholder:text-ink-500 transition duration-200 focus:border-ruby-500/70 focus:outline-none focus:ring-2 focus:ring-ruby-500/25;
+  }
+
+  .input-invalid {
+    @apply border-danger-500/70 focus:border-danger-500 focus:ring-danger-500/25;
+  }
+
+  .skeleton {
+    @apply rounded-xl bg-gradient-to-r from-white/[0.04] via-white/[0.09] to-white/[0.04] bg-[length:200%_100%] animate-shimmer;
+  }
+
+  .reveal {
+    @apply transition duration-700 ease-out;
+  }
+
+  /* Map and Custom Scrollbar Helpers */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .leaflet-container {
+    background-color: #0b132b !important;
+    font-family: inherit !important;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: #0f172a !important;
+    color: #f8fafc !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  .leaflet-popup-tip {
+    background: #0f172a !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "projectId": "72525915",
+  "functions": {
+    "record-donation": {
+      "hasChanged": false,
+      "hash": "10ea350b95e85ff2413dac8da2f043d7bef09b2ce4a7e3bc493587b31f11087f"
+    },
+    "qr-code": {
+      "hasChanged": false,
+      "hash": "0b1222133c9265554ccb90562d6ea6462b7cb2d18769df4ed83b3d20f11bd8e0"
+    }
+  }
+}
